@@ -19,9 +19,10 @@ def decode(text):
     l = []
     for num in text:
         if num.isdigit():
-            num = int(num) - 3
-            if num == 0:
-                num = num+6
+            if int(num) < 3:
+                num = int(num) + 7
+            else: num = int(num) - 3
+
             num = str(num)
         l.append(num)
     return ''.join(l)
