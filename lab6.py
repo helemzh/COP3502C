@@ -15,7 +15,9 @@ def encode(string):
 
 
 def main():
+    stored = ""
     ongoing = True
+
     while ongoing:
         print("Menu")
         print("-------------")
@@ -24,18 +26,19 @@ def main():
         print("3. Quit")
 
         print()
-        option = input(print("Please enter an option: "))
+        option = int(input("Please enter an option: "))
 
         if option == 1:
-            password = input(print("Please enter your password to encode: "))
-            storedpw = encode(password)
+            password = input("Please enter your password to encode: ")
+            stored = encode(password)
             print("Your password has been encoded and stored!")
 
-        if option == 2:
-            print("The encoded password is " + decode(storedpw) + ", and the original password is " + storedpw)
+        elif option == 2:
+            print("The encoded password is " + decode(stored) + ", and the original password is " + stored)
 
-        if option == 3:
+        elif option == 3:
             ongoing = False
+        print()
 
 
 if __name__ == '__main__':
