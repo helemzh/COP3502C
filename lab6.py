@@ -1,6 +1,6 @@
 # Helen Zhang
 # encode 6-digit password shift up 3 num
-def encoder(string):
+def encode(string):
     pw = ""
     for c in string:
         if c == "9":
@@ -15,8 +15,27 @@ def encoder(string):
 
 
 def main():
-    print(encoder("12345555"))
-    print(encoder("00009962"))
+    ongoing = True
+    while ongoing:
+        print("Menu")
+        print("-------------")
+        print("1. Encode")
+        print("2. Decode")
+        print("3. Quit")
+
+        print()
+        option = input(print("Please enter an option: "))
+
+        if option == 1:
+            password = input(print("Please enter your password to encode: "))
+            storedpw = encode(password)
+            print("Your password has been encoded and stored!")
+
+        if option == 2:
+            print("The encoded password is " + decode(storedpw) + ", and the original password is " + storedpw)
+
+        if option == 3:
+            ongoing = False
 
 
 if __name__ == '__main__':
