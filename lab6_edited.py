@@ -13,7 +13,9 @@ def encode(string):
         else:
             pw += str(int(c) + 3)
     return pw
-def decoder(text):
+
+
+def decode(text):
     l = []
     for num in text:
         if num.isdigit():
@@ -23,6 +25,7 @@ def decoder(text):
             num = str(num)
         l.append(num)
     return ''.join(l)
+
 
 def main():
     stored = ""
@@ -44,7 +47,7 @@ def main():
             print("Your password has been encoded and stored!")
 
         elif option == 2:
-            print("The encoded password is " + decode(stored) + ", and the original password is " + stored)
+            print("The encoded password is " + stored + ", and the original password is " + decode(stored))
 
         elif option == 3:
             ongoing = False
