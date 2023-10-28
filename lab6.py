@@ -12,7 +12,17 @@ def encode(string):
         else:
             pw += str(int(c) + 3)
     return pw
-
+#Brian's code
+def decode(text):
+    l = []
+    for num in text:
+        if num.isdigit():
+            num = int(num) - 3
+            if num < 0:
+                num = num+10
+            num = str(num)
+        l.append(num)
+    return ''.join(l)
 
 def main():
     stored = ""
